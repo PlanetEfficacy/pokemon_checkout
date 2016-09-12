@@ -1,6 +1,12 @@
+<div>
+  <p>Backpack: <%= @backpack_count %></p>
+</div>
 <div class="row">
   <% @pokemons.each do |pokemon| %>
-    <div class="col-md-3 text-center pokemon-container">
+    <div class="pokemon-container col-md-3 text-center">
+      <div class="capture_button">
+        <%= button_to "Capture", backpack_pokemons_path(pokemon_id: pokemon.id) %>
+      </div>
       <%= image_tag(pokemon.image_url, class: "pokemon-image") %>
       <h3><%= pokemon.name %></h3>
     </div>
